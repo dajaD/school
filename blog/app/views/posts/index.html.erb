@@ -1,0 +1,10 @@
+<!--Loops through all posts and shows them-->
+<!--having an '@' symbol before post references one post, while no '@' symbol references several-->
+<% @posts.each do |post| %>
+	<h2><%= post.title %></h2>
+	<!--<div><%= post.body %></div>-->
+	<div><%= truncate(post.body, :length => 35) %></div>
+	<br>
+	<%= link_to "Read Post", post %>
+	<hr>
+<% end %>
