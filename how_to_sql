@@ -1,0 +1,29 @@
+This is how to have mysql 8.0 set up and compatible with RoR
+
+I did this with linux, so you may need to translate commands, some may be the same.
+
+1. Ensure you have mysql 8.0 installed.
+2. When installing, you should have been prompted to create a root password.
+3. enter 'mysql -u root -p'
+   this command requires your root password from step 2.
+4. You will then be in a command interface for mysql
+5. enter 'create database our_db;'
+   'our_db' will be the name of our database for this project.
+6. enter 'use our_db;'
+   this will make this db the server we'll be currently using.
+7. enter 'SELECT DATABASE();'
+   this will show you if 'our_db' is being used, else it will be 'null'
+8. enter 'mysqladmin -u root -p status'
+   this will tell you whether the database is running
+9. if it isn't running, enter 'service my_sql start'
+   This will start the database.
+10. In the ourapp/config/database.yml will be configuration settings for
+    the db. 
+11. Create an environmental variable for the db root password, because 
+    it is not safe to have it in plaintext.
+    For temporary use you can use 'export MYSQLPW='your_pw''
+    Or you can add it permanently in ~/.bashrc by putting 'export MYSQLPW='your_pw'' in there.
+
+As I said, you may need to perform equivalent commands on your machines, or you may run into different challenges that I haven't. Good Luck!
+
+If the db isn't properly configured, you'll get an error upon using 'localhost:3000'
