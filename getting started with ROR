@@ -1,0 +1,34 @@
+//tips on ruby
+
+//you want to make sure you actually have ruby installed
+ruby -v
+
+//check your SQL
+sqlite3 --version
+
+//install rails
+gen install rails
+
+//check to make sure everything is good
+rails --version
+
+//creating an application
+rails new appli
+
+//change directories to the new application
+cd appli
+
+//how to check your server
+bin/rails server
+
+//how to close your server
+"control +c"
+
+//how to create a controller
+//a controller purpose is to receive requests for the application. routing decides which controller receives which controller
+//receives which request
+//view displays this information in human readable format. should just display information. written in language called eRuby
+bin/rails generate controller Welcome index
+
+//how to view the application
+http://localhost:3000
